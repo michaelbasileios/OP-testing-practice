@@ -1,4 +1,4 @@
-import { capitalize } from "./index.js";
+import { capitalize, reverseString } from "./index.js";
 
 describe("capitalize", () => {
   test("regular lowercase string", () => {
@@ -23,5 +23,11 @@ describe("capitalize", () => {
 
   test("multiple words", () => {
     expect(capitalize("snuggle muffin")).toBe("Snuggle muffin");
+  });
+});
+
+describe("reverseString", () => {
+  test("single lowercase word", () => {
+    expect(reverseString("boss")).toBe("ssob");
   });
 });
