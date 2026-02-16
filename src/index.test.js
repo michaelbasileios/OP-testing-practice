@@ -1,4 +1,4 @@
-import { capitalize, reverseString } from "./index.js";
+import { capitalize, reverseString, calculator } from "./index.js";
 
 describe("capitalize", () => {
   test("regular lowercase string", () => {
@@ -29,5 +29,23 @@ describe("capitalize", () => {
 describe("reverseString", () => {
   test("single lowercase word", () => {
     expect(reverseString("boss")).toBe("ssob");
+  });
+});
+
+describe("calculator", () => {
+  test("add", () => {
+    expect(calculator.add(2, 2)).toBe(4);
+  });
+
+  test("subtract", () => {
+    expect(calculator.subtract(5, 2)).toBe(3);
+  });
+
+  test("multiply", () => {
+    expect(calculator.multiply(7, 3)).toBe(21);
+  });
+
+  test("divide", () => {
+    expect(calculator.divide(6, 2)).toBe(3);
   });
 });

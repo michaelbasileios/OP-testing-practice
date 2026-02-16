@@ -11,4 +11,11 @@ function reverseString(string) {
   return string.split("").reverse().join("");
 }
 
-export { capitalize, reverseString };
+const calculator = {
+  add: (a, b) => a + b,
+  subtract: (a, b) => a - b,
+  multiply: (a, b) => a * b,
+  divide: (a, b) => (b !== 0 ? a / b : console.log("Cannot divide by zero")),
+};
+
+export { capitalize, reverseString, calculator };
