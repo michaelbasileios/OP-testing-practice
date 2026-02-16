@@ -8,7 +8,7 @@ function capitalize(string) {
 }
 
 function reverseString(string) {
-  return "ssob";
+  return string.split("").reverse().join("");
 }
 
 export { capitalize, reverseString };
