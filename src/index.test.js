@@ -54,4 +54,12 @@ describe("caesarCipher", () => {
   test("single word", () => {
     expect(cipher("smith", 3)).toBe("vplwk");
   });
+
+  test("wrapping", () => {
+    expect(cipher("xyz", 3)).toBe("abc");
+  });
+
+  test("punctuation", () => {
+    expect(cipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+  });
 });
