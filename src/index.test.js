@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator } from "./index.js";
+import { capitalize, reverseString, calculator, cipher } from "./index.js";
 
 describe("capitalize", () => {
   test("regular lowercase string", () => {
@@ -47,5 +47,11 @@ describe("calculator", () => {
 
   test("divide", () => {
     expect(calculator.divide(6, 2)).toBe(3);
+  });
+});
+
+describe("caesarCipher", () => {
+  test("single word", () => {
+    expect(cipher("smith", 3)).toBe("vplwk");
   });
 });

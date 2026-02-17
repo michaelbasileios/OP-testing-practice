@@ -18,4 +18,25 @@ const calculator = {
   divide: (a, b) => (b !== 0 ? a / b : console.log("Cannot divide by zero")),
 };
 
-export { capitalize, reverseString, calculator };
+function cipher(string, shift) {
+  const normalizedShift = ((shift % 26) + 26) % 26;
+
+  return [...string]
+    .map((char) => {
+      const characterCode = char.charCodeAt(0);
+      if (characterCode >= 65 && characterCode <= 90) {
+        return String.fromCharCode(
+          ((characterCode - 65 + normalizedShift) % 26) + 65,
+        );
+      }
+      if (characterCode >= 97 && characterCode <= 122) {
+        return String.fromCharCode(
+          ((characterCode - 97 + normalizedShift) % 26) + 97,
+        );
+      }
+      return char;
+    })
+    .join("");
+}
+
+export { capitalize, reverseString, calculator, cipher };
