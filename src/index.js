@@ -39,4 +39,15 @@ function cipher(string, shift) {
     .join("");
 }
 
-export { capitalize, reverseString, calculator, cipher };
+function analyzeArray(array) {
+  const analysis = {
+    average: array.reduce((sum, num) => sum + num, 0) / array.length,
+    min: Math.min(...array),
+    max: Math.max(...array),
+    length: array.length,
+  };
+
+  return analysis;
+}
+
+export { capitalize, reverseString, calculator, cipher, analyzeArray };

@@ -1,4 +1,10 @@
-import { capitalize, reverseString, calculator, cipher } from "./index.js";
+import {
+  capitalize,
+  reverseString,
+  calculator,
+  cipher,
+  analyzeArray,
+} from "./index.js";
 
 describe("capitalize", () => {
   test("regular lowercase string", () => {
@@ -61,5 +67,30 @@ describe("caesarCipher", () => {
 
   test("punctuation", () => {
     expect(cipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+  });
+});
+
+describe("analyze array", () => {
+  const array = [1, 8, 3, 4, 2, 6];
+  const analysis = {
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  };
+  test("array length", () => {
+    expect(analyzeArray(array).length).toBe(6);
+  });
+
+  test("array minimum", () => {
+    expect(analyzeArray(array).min).toBe(1);
+  });
+
+  test("array maximum", () => {
+    expect(analyzeArray(array).max).toBe(8);
+  });
+
+  test("array average", () => {
+    expect(analyzeArray(array).average).toBe(4);
   });
 });
