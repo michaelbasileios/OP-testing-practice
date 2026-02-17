@@ -93,4 +93,8 @@ describe("analyze array", () => {
   test("array average", () => {
     expect(analyzeArray(array).average).toBe(4);
   });
+
+  test("the entire object", () => {
+    expect(analyzeArray(array)).toEqual(analysis);
+  });
 });
